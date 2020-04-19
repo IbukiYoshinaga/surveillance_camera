@@ -1,2 +1,2 @@
 #実行時#
-python face_recognition
+python remote_camera
