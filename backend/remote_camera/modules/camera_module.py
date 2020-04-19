@@ -24,6 +24,7 @@ def get_stream_data():
   video_capture.release()
 
 
+# 動画保存処理
 def camera_recording(release_flag=False, capture_frame=None):
   if(capture_frame is not None):
     video.write(capture_frame)
