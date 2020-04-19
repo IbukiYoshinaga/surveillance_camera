@@ -6,9 +6,9 @@ cascade_path = 'face_recognition/cascades/haarcascade_frontalface_default.xml'
 cascade      = cv2.CascadeClassifier(cascade_path)
 
 #吐き出す画像のpath
-output_face_path   = "face_recognition/images/output_face.jpg"
-output_around_path = "face_recognition/images/output_around.jpg"
+output_image_path = "face_recognition/images/output_face.jpg"
 
+# ビデオ設定
 video_capture = cv2.VideoCapture(0)
 video_width   = int(video_capture.get(3))  # カメラの横幅
 video_height  = int(video_capture.get(4))  # カメラの縦幅
@@ -40,7 +40,7 @@ while(True):
     for rect in face_rect:
       cv2.rectangle(resize_capture_frame, tuple(rect[0:2]), tuple(
         rect[0:2]+rect[2:4]), outline_color, thickness=2)
-    cv2.imwrite(output_face_path, resize_capture_frame)
+    cv2.imwrite(output_image_path, resize_capture_frame)
 
   video.write(capture_frame)
 
