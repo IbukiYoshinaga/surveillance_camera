@@ -18,7 +18,7 @@ def get_stream_data():
   while True:
     ret, capture_frame = video_capture.read()
     camera_recording(False, capture_frame)
-    ret, jpg = cv2.imencode("view.jpg", capture_frame)
+    ret, jpg = cv2.imencode("stream_picture.jpg", capture_frame)
     yield b'--boundary\r\nContent-Type: image/jpeg\r\n\r\n' + jpg.tostring() + b'\r\n\r\n'
 
   video_capture.release()
