@@ -8,7 +8,7 @@ video_width   = int(video_capture.get(3))  # カメラの横幅
 video_height  = int(video_capture.get(4))  # カメラの縦幅
 fourcc        = cv2.VideoWriter_fourcc(*'XVID')
 video         = cv2.VideoWriter(
-                  'remote_camera/images/video.mp4',
+                  'remote_camera/images/stream_video.mp4',
                   fourcc,
                   30,
                   (video_width, video_height)
