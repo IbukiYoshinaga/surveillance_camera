@@ -4,15 +4,15 @@ from uuid import getnode as get_mac
 
 # ビデオ設定
 video_capture = cv2.VideoCapture(0)
-video_width   = int(video_capture.get(3))  # カメラの横幅
-video_height  = int(video_capture.get(4))  # カメラの縦幅
+video_width   = int(video_capture.get(3))  #カメラの横幅
+video_height  = int(video_capture.get(4))  #カメラの縦幅
 fourcc        = cv2.VideoWriter_fourcc(*'XVID')
 video         = cv2.VideoWriter(
-                  'remote_camera/images/video.mp4',
+                  'remote_camera/images/stream_video.avi',
                   fourcc,
                   30,
                   (video_width, video_height)
-                )  # ビデオ設定
+                )  #ビデオ設定
 
 def get_stream_data():
   while True:
@@ -24,6 +24,7 @@ def get_stream_data():
   video_capture.release()
 
 
+# 動画保存処理
 def camera_recording(release_flag=False, capture_frame=None):
   if(capture_frame is not None):
     video.write(capture_frame)
