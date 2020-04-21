@@ -20,7 +20,6 @@ def start_camera():
       image_count = max(strip_directry_name_list) + 1
 
     ret, capture_frame = video_capture.read()
-    date = datetime.now().strftime('%Y%m%d_%H%M%S')
-    path = 'remote_camera/images/' + str(image_count) + '.png'
-    cv2.imwrite(path, capture_frame)
+    save_image_path = 'remote_camera/images/' + str(image_count) + '.jpg'
+    cv2.imwrite(save_image_path, capture_frame)
     image_count += 1
